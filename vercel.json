@@ -1,9 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/api/pxy/[...path]" }
+  "buildCommand": "echo done",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.js" }
   ]
 }
