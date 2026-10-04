@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "outputDirectory": ".",
+  "outputDirectory": "public",
+  "buildCommand": "echo 'skip'",
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.js" }
   ]
