@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   }
 
   const SUPABASE_URL = 'https://zbdhvfexyjocxqmkobdo.supabase.co';
-  const path = req.url.replace(/^\/api\/proxy/, '');
+  const path = req.url.replace(/^\/api\/pxy/, '');
   const target = SUPABASE_URL + path;
 
   try {
