@@ -31,9 +31,9 @@ export default async function handler(req, res) {
         }
       );
       if (!up.ok) return res.status(500).json({ error: await up.text() });
-      return res.status(200).json({
+           return res.status(200).json({
         success: true,
-        url: `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${encodeURIComponent(filename)}`
+        url: `${req.headers['x-forwarded-proto'] || 'https'}://${req.headers.host}/api/storage/v1/object/public/${BUCKET}/${encodeURIComponent(filename)}`
       });
     } catch (e) {
       return res.status(500).json({ error: e.message });
